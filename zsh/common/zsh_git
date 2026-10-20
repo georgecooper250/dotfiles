@@ -1,0 +1,6 @@
+#Reset commit messages to squash all commits into next message.
+function gitsquash() {
+  git reset $(git merge-base --fork-point $(git rev-parse --abbrev-ref origin/HEAD)) --soft
+}
+
+plugins=(git)
